@@ -96,7 +96,8 @@ const CodePage = () => {
       </div>
       <div className="space-y-4 mt-4 px-4">
         {islLoading && (
-          <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+          <div className="flex items-center gap-2">
+            <p className="text-xs">Typing</p>
             <Loader />
           </div>
         )}
@@ -123,7 +124,7 @@ const CodePage = () => {
                     <code className="bg-black/10 rounded-lg p-1" {...props} />
                   ),
                 }}
-                 className="text-sm overflow-hidden leading-7"
+                className="text-sm overflow-hidden leading-7"
               >
                 {mes.content || ""}
               </ReactMarkdown>

@@ -40,8 +40,8 @@ const ImagePage = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const response = await axios.post("/api/image", values);
-      console.log('response', response);
-      
+      console.log("response", response);
+
       const urls = response.data.map((image: { url: string }) => image.url);
       setImages(urls);
 
@@ -149,7 +149,8 @@ const ImagePage = () => {
       </div>
       <div className="space-y-4 mt-4 px-4">
         {islLoading && (
-          <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+          <div className="flex items-center gap-2">
+            <p className="text-xs">Generating</p>
             <Loader />
           </div>
         )}
